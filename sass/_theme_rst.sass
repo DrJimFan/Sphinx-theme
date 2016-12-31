@@ -1,16 +1,15 @@
-// -------------------------------------------------------------------------------------------------------------------
-// CONTRIBUTORS, PLEASE READ THIS!
-// -------------------------------------------------------------------------------------------------------------------
-// Couple things...
-//    1. Lots of this @extends from wyrm_core/_type.sass (http://www.github.com/snide/wyrm/.
-//        * Try not to replace any @extends code. It's pretty generic stuff meant to work together.
-//        * That said, know that I'm very unlikely to accept PRs from wyrm just to change style here.
-//    2. I plan to remove the !importants in here. Part of it is due to lazyness, part to sphinx's fondness for nesting.
-//    3. Try to use variables from wyrm_core/wy_variables.sass. Notable are...
-//        * $base-line-height // All margins, padding and line-height should use this in .25 increments.
-//        * $text-color, $text-light, $text-dark...etc
-//        * $base-font-family, $custom-font-family, $code-font-family
-//    4. If you have changes for mobile/tablet, put them at the bottom of the sass file.
+// 1. Lots of this @extends from wyrm_core/_type.sass (http://www.github.com/snide/wyrm/.
+//     * Try not to replace any @extends code. It's pretty generic stuff meant to work together.
+//     * That said, know that I'm very unlikely to accept PRs from wyrm just to change style here.
+// 2. Plan to remove the !importants in here. Part of it is due to lazyness, part to sphinx's fondness for nesting.
+// 3. Try to use variables from wyrm_core/wy_variables.sass. Notable are...
+//     * $base-line-height // All margins, padding and line-height should use this in .25 increments.
+//     * $text-color, $text-light, $text-dark...etc
+//     * $base-font-family, $custom-font-family, $code-font-family
+// 4. If you have changes for mobile/tablet, put them at the bottom of the sass file.
+// 
+// Note: all marks with `mydef` is customization that overrides the default in this theme.
+// $block-code-size and $inline-code-size are defined in ./_theme_variables.sass
 // --------------------------------------------------------------------------------------------------------------------
 
 .rst-content
@@ -49,6 +48,13 @@
     margin-bottom: $base-line-height
   .literal-block, pre.literal-block
     @extend .codeblock
+  // hack wyrm/sass/wyrm_addons/pygments/_pygments.sass
+  // mydef: code block size defined in ./_theme_variables.sass
+  div[class^='highlight'] td.code
+    font-size: $block-code-size
+  div[class^='highlight'] pre
+    font-size: $block-code-size 
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
     @extend .wy-alert
@@ -199,6 +205,7 @@
     @extend code
     color: $black
     padding: 2px 5px
+    font-size: $inline-code-size  // mydef: inline code size across the doc
     big, em
       font-size: 100% !important
       line-height: normal
@@ -228,28 +235,32 @@
   // that output similar, but not quite the same nesting so this is really the best we can do.
   dl:not(.docutils)
     margin-bottom: $base-line-height
+    font-size: 100%  // mydef: class size and method size default
     // This would be the equivilant of a .. class::
     dt
       display: inline-block
       margin: $base-line-height / 4 0
-      font-size: 90%
       line-height: normal
       background: lighten($class-color, 63%)
       color: lighten($class-color, 25%)
       border-top: solid 3px $class-color
       padding: $base-line-height / 4
       position: relative
+      font-size: 107% // mydef: class signature size
       &:before
         color: lighten($class-color, 20%)
       .headerlink
         color: $text-color
-        font-size: 100% !important
+        font-size: 100% !important 
     // And this would be the .. method::
     dl dt
       margin-bottom: $base-line-height / 4
       border: none
-      border-left: solid 3px hsl(0,0%,80%)
-      background: hsl(0,0%,94%)
+      // border-left: solid 3px hsl(0,0%,80%)
+      border-left: solid 3px lighten($class-color, 10%)
+      font-size: 100% // mydef: class method signature size
+      // background: hsl(0,0%,94%)
+      background: lighten($class-color, 63%)
       color: $method-color
       .headerlink
         color: $headerlink-color
@@ -258,7 +269,8 @@
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
     tt, code
-      font-weight: bold
+      // font-weight: bold          // mydef: class inline code should not be bold
+      font-size: $inline-code-size  // mydef: class inline code size
       &.descname, &.descclassname
         background-color: transparent
         border: none
