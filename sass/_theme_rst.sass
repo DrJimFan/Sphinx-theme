@@ -247,6 +247,7 @@
       padding: $base-line-height / 4
       position: relative
       font-size: 107% // mydef: class signature size
+      font-family: $code-font-family
       &:before
         color: lighten($class-color, 20%)
       .headerlink
@@ -256,11 +257,9 @@
     dl dt
       margin-bottom: $base-line-height / 4
       border: none
-      // border-left: solid 3px hsl(0,0%,80%)
-      border-left: solid 3px lighten($class-color, 10%)
+      border-left: solid 3px lighten($class-color, 10%) // hsl(0,0%,80%)
       font-size: 100% // mydef: class method signature size
-      // background: hsl(0,0%,94%)
-      background: lighten($class-color, 63%)
+      background: lighten($class-color, 63%)   // hsl(0,0%,94%)
       color: $method-color
       .headerlink
         color: $headerlink-color
