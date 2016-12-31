@@ -33,7 +33,8 @@
     "lato-googlefont": "*",
     "robotoslab-googlefont": "*",
     "inconsolata-googlefont": "*",
-    "font-awesome": "~4.6"
+    "font-awesome": "~4.6",
+    "ubuntumono-googlefont": "*"
   },
   "resolutions": {
     "font-awesome": "~4.6"

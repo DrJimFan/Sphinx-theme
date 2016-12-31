@@ -46,13 +46,13 @@
     &.divide-bottom
       border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
-      background: darken($menu-vertical-background-color, 10%)
+      background: darken($menu-vertical-background-color, 5%)
       a
         color: $menu-link-medium
-        border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        border-right: solid 1px darken($menu-vertical-background-color, 15%)
         padding: $gutter / 4 $gutter * 1.5
         &:hover
-          background: darken($menu-vertical-background-color, 15%)
+          background: darken($menu-vertical-background-color, 10%)
     code
       border: none
       background: inherit
@@ -78,8 +78,8 @@
     position: relative
     background: $menu-vertical-background-color
     border: none
-    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
-    border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    border-bottom: solid 1px darken($menu-vertical-background-color, 15%)
+    border-top: solid 1px darken($menu-vertical-background-color, 15%)
     padding-left: $gutter -4px
     +font-smooth
     &:hover
@@ -103,32 +103,32 @@
   li.toctree-l2
     &.current
       > a
-        background: darken($menu-vertical-background-color, 20%)
+        background: darken($menu-vertical-background-color, 15%)
         padding: $gutter / 4 $gutter * 1.5
       li.toctree-l3 > a
         display: block
-        background: darken($menu-vertical-background-color, 20%)
+        background: darken($menu-vertical-background-color, 15%)
         padding: $gutter / 4 $gutter * 2.5
     a:hover span.toctree-expand
       color: $menu-link-medium
     span.toctree-expand
-      color: darken($menu-vertical-background-color, 35%)
+      color: darken($menu-vertical-background-color, 30%)
   li.toctree-l3
     font-size: .9em
     &.current
       > a
-        background: darken($menu-vertical-background-color, 25%)
+        background: darken($menu-vertical-background-color, 20%)
         padding: $gutter / 4 $gutter * 2.5
       li.toctree-l4 > a
         display: block
-        background: darken($menu-vertical-background-color, 25%)
+        background: darken($menu-vertical-background-color, 20%)
         padding: $gutter / 4 $gutter * 3.5
         border-top: none
         border-bottom: none
     a:hover span.toctree-expand
       color: $menu-link-medium
     span.toctree-expand
-      color: darken($menu-vertical-background-color, 40%)
+      color: darken($menu-vertical-background-color, 35%)
   li.toctree-l4
     font-size: .9em
 

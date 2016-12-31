@@ -6,14 +6,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     open : {
       dev: {
-        path: 'http://localhost:1919'
+        path: 'http://localhost:2333'
       }
     },
 
     connect: {
       server: {
         options: {
-          port: 1919,
+          port: 2333,
           base: 'demo_docs/build',
           livereload: true
         }
@@ -42,6 +42,15 @@ module.exports = function(grunt) {
               flatten: true,
               src: ['bower_components/robotoslab-googlefont/RobotoSlab-Bold.ttf',
                     'bower_components/robotoslab-googlefont/RobotoSlab-Regular.ttf'],
+              dest: 'sphinx_rtd_theme/static/fonts/',
+              filter: 'isFile'
+          },
+          {
+              expand: true,
+              flatten: true,
+              src: ['bower_components/ubuntumono-googlefont/UbuntuMono-Bold.ttf',
+                    'bower_components/ubuntumono-googlefont/UbuntuMono-Regular.ttf',
+                    'bower_components/ubuntumono-googlefont/UbuntuMono-Italic.ttf'],
               dest: 'sphinx_rtd_theme/static/fonts/',
               filter: 'isFile'
           },
@@ -156,8 +165,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
-  grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','browserify:build','exec:build_sphinx']);
+  /* 
+   * Uncomment these lines will re-download the fonts every time.
+   * grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
+   * grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
+   * grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','browserify:build','exec:build_sphinx']);
+  */
+  grunt.registerTask('fonts', ['copy:fonts']);
+  grunt.registerTask('default', ['clean:build','sass:dev','browserify:dev','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['clean:build','sass:build','browserify:build','exec:build_sphinx']);
 }
 

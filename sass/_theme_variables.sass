@@ -2,20 +2,102 @@
 // that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
 // for a reference.
 
+/**
+ * Wyrm: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/blob/master/sass/_theme_variables.sass
+ * Stanford colors: https://identity.stanford.edu/web-toolkit/color.html
+ * https://identity.stanford.edu/overview/color.html
+ */
 $font-awesome-dir:                    "../font/"
 $static-img:                          "../img/"
 
-// color names
 $cardinal: #8c1515
 $warm-gray: #3F3C30
+$sandstone-20: #f8f6ea
+$sandstone-light: #fffff7
+$beige-20: #f2f1eb
+$pantone-green: #175E54
+$pantone-green-light: #009B76
+$smooth-blue: #CEE6F2
 
-//$text-color:                          $warm-gray
+// **********************************************************************
+// This part is copied from bower_components/wyrm/sass/wyrm_core/_wy_variables.sass to override
+$background-color:                    lighten($sandstone-20, 2%)
+$section-background-color:            $background-color
+//$background-color:                    $sandstone-light
+//$section-background-color:            $sandstone-light
+$dropdown-color:                      $section-background-color
+$dropdown-border-color:               darken($background-color, 10%)
+
+// Typography (mixed with ReadTheDoc settings)
+$base-font-size:                      16px !default
+$base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$base-font-family-bold:               bold
+$base-line-height:                    24px !default
+$custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+$custom-font-family2:                 Georgia, serif
+$code-font-family:                    "Ubuntu Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+//$icon-font-family:                    "FontAwesome"
+
+// Text color
+//$text-color:                          hsl(0,0%,25%) !default
+//$text-invert:                         hsl(0,0%,100%) !default
+$text-color:                          $warm-gray
+$text-invert:                         invert($text-color)
+$text-code-color:                     lighten($cardinal, 15%)
+$text-code-background-color:          $background-color
+$text-code-border-color:              hsl(195,7%,89%)
+$text-dark:                           lighten($text-color,15%) !default
+$text-medium:                         lighten($text-color,25%) !default
+$text-light:                          lighten($text-color,45%) !default
+$text-lighter:                        lighten($text-color,60%) !default
+
+// Tables
+$table-background-color:              transparent
+//$table-border-color:                  hsl(195, 7%, 89%)
+//$table-stripe-color:                  hsl(185,15%,96%)
+//$table-bg-hover-color:                hsl(0,0%,85%)
+$table-border-color:                  hsl(195, 7%, 89%)
+$table-stripe-color:                  $smooth-blue
+$table-bg-hover-color:                hsl(0,0%,85%)
+$table-head-background-color:         $table-border-color
+$table-font-size:                     90%
+$table-padding-size:                  $base-font-size / 2 $base-font-size
+
+// Forms
+$input-text-color:                    #cad2d3 !default
+$input-background-color:              $background-color !default
+$input-border-color:                  #ccc !default
+$input-shadow-color:                  #ddd !default
+$input-focus-color:                   $gray-dark
+
+// Links
+$link-color:                          $blue
+$link-color-visited:                  $purple
+$link-color-hover:                    lighten($link-color, 6%) !default
+$link-color-alt:                      hsl(33, 100%, 51%)
+
+// Buttons
+$button-background-color:             $pantone-green
+$button-neutral-background-color:     $table-stripe-color
+
+// Spinner
+$spinner-color:                       $link-color
+
+// Menu
+$menu-top-link-color:                 hsl(0, 0%, 95%)
+$menu-background-color:               $warm-gray
+$menu-logo-color:                     $link-color
+$nav-desktop-width:                   300px
+$nav-desktop-position:                left
+
+// **********************************************************************
+
 $mathjax-color:                       $text-color
 
 $headerlink-color:                    $text-color
 
 // Code colors
-$text-viewcode-color:                 $green
+$text-viewcode-color:                 $pantone-green-light
 $text-codexref-color:                 $text-color
 
 // Definition list colors
@@ -58,8 +140,3 @@ $sidebar-title-background-color:      $table-border-color
 
 // Sphinx highlight color
 $highlight-color:                     $yellow
-
-$base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
-$custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
-$custom-font-family2:                 Georgia, serif
-$code-font-family:                    Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
