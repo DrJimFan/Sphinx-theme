@@ -1,3 +1,13 @@
+// mydef: fix the ordering of "visited" and "hover" in wyrm_core/_type.sass
+// "hover" must be after "visited" to take effect
+a
+  color: $link-color
+  cursor: pointer
+  &:visited
+    color: $link-color-visited
+  &:hover
+    color: $link-color-hover
+
 .wy-affix
   position: fixed
   top: $gutter
