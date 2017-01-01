@@ -1,11 +1,11 @@
-Stanford theme for Sphinx based on ReadTheDoc
+Stanford theme for Sphinx 
 ==========================
 
 ## Add new fonts
 
 - Edit `bower.json` 
 
-Original README
+ReadTheDoc theme
 ==========================
 
 View a working [demo](http://docs.readthedocs.org) over on
@@ -21,8 +21,6 @@ site.
 so please make your edits to the SASS files here, rather than the .css
 files on RTD.
 
-![image](screen_mobile.png){width="100%"}
-
 Installation
 ------------
 
@@ -30,13 +28,13 @@ Installation
 
 Download the package or add it to your `requirements.txt` file:
 
-``` {.sourceCode .bash}
+```bash
 $ pip install sphinx_rtd_theme
 ```
 
 In your `conf.py` file:
 
-``` {.sourceCode .python}
+```python
 import sphinx_rtd_theme
 
 html_theme = "sphinx_rtd_theme"
@@ -67,7 +65,7 @@ The theme's project-wide options are defined in the
 defined in your project's `conf.py` via `html_theme_options`. For
 example:
 
-``` {.sourceCode .python}
+```python 
 html_theme_options = {
     'collapse_navigation': False,
     'display_version': False,
@@ -128,19 +126,19 @@ means installing node and ruby.
 1.  Install [sphinx](http://www.sphinx-doc.org) into a virtual
     environment.
 
-``` {.sourceCode .}
+```
 pip install sphinx
 ```
 
 2.  Install sass
 
-``` {.sourceCode .}
+```
 gem install sass
 ```
 
 2.  Install node, bower and grunt.
 
-``` {.sourceCode .}
+```
 // Install node
 brew install node
 
@@ -154,7 +152,7 @@ npm install
 Now that our environment is set up, make sure you're in your virtual
 environment, go to this repository in your terminal and run grunt:
 
-``` {.sourceCode .}
+```
 grunt
 ```
 

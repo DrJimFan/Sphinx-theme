@@ -1,11 +1,8 @@
 {
-  "name": "sphinx-rtd-theme",
-  "version": "0.1.9",
-  "homepage": "https://github.com/snide/wyrm",
-  "authors": [
-    "Dave Snider <dave.snider@gmail.com>"
-  ],
-  "description": "Sphinx theme for readthedocs.org.",
+  "name": "stanford-theme",
+  "version": "1.0",
+  "homepage": "https://github.com/LinxiFan/Stanford-theme",
+  "description": "Stanford theme for Sphinx documentation generator and ReadTheDoc.org",
   "license": "MIT",
   "main": [
     "js/theme.js"

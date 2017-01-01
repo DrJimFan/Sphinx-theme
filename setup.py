@@ -1,25 +1,23 @@
 # -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
-
-.. _github: https://www.github.com/snide/sphinx_rtd_theme
-
+"""
+github.com/LinxiFan/Stanford-theme
 """
 from setuptools import setup
-from sphinx_rtd_theme import __version__
+from stanford_theme import __version__
 
 
 setup(
-    name='sphinx_rtd_theme',
+    name='stanford_theme',
     version=__version__,
-    url='https://github.com/snide/sphinx_rtd_theme/',
+    url='https://github.com/LinxiFan/Stanford-theme/',
     license='MIT',
-    author='Dave Snider',
-    author_email='dave.snider@gmail.com',
-    description='ReadTheDocs.org theme for Sphinx, 2013 version.',
+    author='Linxi (Jim) Fan',
+    author_email='jimfan@cs.stanford.edu',
+    description='Stanford theme for Sphinx documentation generator and ReadTheDoc.org',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
+    packages=['stanford_theme'],
+    package_data={'stanford_theme': [
         'theme.conf',
         '*.html',
         'static/css/*.css',
@@ -28,11 +26,9 @@ setup(
     ]},
     include_package_data=True,
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: BSD License',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Environment :: Web Environment',
-        'Intended Audience :: Developers',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
