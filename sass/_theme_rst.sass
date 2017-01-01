@@ -251,8 +251,8 @@
       &:before
         color: lighten($class-color, 20%)
       .headerlink
-        color: $text-color
-        font-size: 100% !important 
+        color: $text-viewcode-color  // mydef: link icon color after "[source]" in class
+        font-size: 80% !important  // mydef: link icon size after "[source]"
     // And this would be the .. method::
     dl dt
       margin-bottom: $base-line-height / 4
@@ -262,8 +262,8 @@
       background: lighten($class-color, 63%)   // hsl(0,0%,94%)
       color: $method-color
       .headerlink
-        color: $headerlink-color
-        font-size: 100% !important
+        color: $text-viewcode-color    // mydef: link icon color in methods
+        font-size: 80% !important  // mydef: link icon size in methods
     dt:first-child
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
