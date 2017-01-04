@@ -1,0 +1,145 @@
+// Listed here are varibles used for stanford_theme, they either add to or overwrite the default ones
+// that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
+// for a reference.
+
+/**
+ * Wyrm: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/blob/master/sass/_theme_variables.sass
+ * Stanford colors: https://identity.stanford.edu/web-toolkit/color.html
+ * https://identity.stanford.edu/overview/color.html
+ */
+$font-awesome-dir:                    "../font/"
+$static-img:                          "../img/"
+
+// Stanford theme colors
+$cardinal: #8c1515
+$warm-gray: #3F3C30
+$sandstone-20: #f8f6ea
+$sandstone-light: #fffff7
+$beige-10: #f2f1eb
+$beige-5: #fbfbf9
+$pantone-green: #175E54
+$pantone-green-light: #009B76
+$pantone-purple: #53284F
+$smooth-blue: #ddf1f7
+$cu-blue-light: #9fcbed  // #b9e0f7 #75aadb (slightly lighter)
+$cu-blue-dark: #5091cd
+$light-gray: hsl(185, 15%, 96%)
+
+// **********************************************************************
+// This part is copied from bower_components/wyrm/sass/wyrm_core/_wy_variables.sass to override
+//$background-color:                    #edf0f2
+//$section-background-color:            $background-color
+//$dropdown-color:                      $section-background-color
+//$dropdown-border-color:               darken($background-color, 10%)
+
+// Typography (mixed with ReadTheDoc settings)
+$base-font-size:                      16px !default
+$base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$base-font-family-bold:               bold
+$base-line-height:                    24px !default
+$custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+$custom-font-family2:                 Georgia, serif
+$code-font-family:                    "Ubuntu Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+$icon-font-family:                    "FontAwesome"
+$block-code-size:                     15px  // mydef, use in _theme_rst.sass, must be absolute
+$inline-code-size:                    97%  // mydef, use in _theme_rst.sass, should be a relative percentage
+
+// Text color
+//$text-color:                          $warm-gray
+//$text-invert:                         invert($text-color)
+//$text-code-color:                     lighten($cardinal, 15%)
+//$text-code-background-color:          $background-color
+//$text-code-border-color:              hsl(195,7%,89%)
+//$text-dark:                           lighten($text-color,15%) !default
+//$text-medium:                         lighten($text-color,25%) !default
+//$text-light:                          lighten($text-color,45%) !default
+//$text-lighter:                        lighten($text-color,60%) !default
+
+// Tables
+//$table-background-color:              transparent
+//$table-border-color:                  hsl(195, 7%, 89%)
+//$table-stripe-color:                  $smooth-blue
+//$table-bg-hover-color:                hsl(0,0%,85%)
+//$table-head-background-color:         $table-border-color
+//$table-font-size:                     90%
+//$table-padding-size:                  $base-font-size / 2 $base-font-size
+
+// Forms
+$input-text-color:                    #cad2d3 !default
+$input-background-color:              $background-color !default
+$input-border-color:                  #ccc !default
+$input-shadow-color:                  #ddd !default
+$input-focus-color:                   $gray-dark
+
+// Links
+$link-color:                          $cu-blue-dark
+$link-color-visited:                  $purple
+$link-color-hover:                    $cu-blue-light
+$link-color-alt:                      hsl(33, 100%, 51%)
+$link-color-active:                   lighten($purple, 20%)
+
+// Buttons
+//$button-background-color:             $pantone-green
+//$button-neutral-background-color:     $sandstone-20
+
+// Spinner
+$spinner-color:                       $link-color
+
+// Menu
+//$menu-top-link-color:                 hsl(0, 0%, 95%)
+//$menu-background-color:               $warm-gray
+//$menu-logo-color:                     $cardinal  // navigation bar "active" link background
+$nav-desktop-width:                   300px   // left side navigation bar width
+$nav-desktop-position:                left
+
+// **********************************************************************
+
+$mathjax-color:                       $text-color
+
+// Code colors
+$text-viewcode-color:                 $pantone-green-light
+$text-codexref-color:                 $text-color
+
+// link icon color (after "[source]", i.e. viewcode-color)
+$headerlink-color:                    $text-viewcode-color
+
+// Definition list colors
+$class-color:                         $blue
+$method-color:                        $gray
+
+// Footer colors
+$footer-color:                        $gray-light
+
+// Menu colors
+$menu-vertical-background-color:      $section-background-color
+
+// Menu text colors
+$menu-color:                          $gray
+$menu-dark:                           lighten($menu-color,15%) !default
+$menu-medium:                         lighten($menu-color,25%) !default
+$menu-light:                          lighten($menu-color,45%) !default
+$menu-lighter:                        lighten($menu-color,60%) !default
+
+// Menu link colors
+$menu-link-color:                     $text-color
+$menu-link-dark:                      $text-dark
+$menu-link-medium:                    $text-medium
+$menu-link-light:                     $text-light
+$menu-link-active:                    $white
+
+// Navigation colors
+$nav-background-color:                $menu-background-color
+$nav-search-background-color:         $blue
+$nav-search-color:                    $section-background-color
+$nav-link-color:                      $nav-search-background-color
+$nav-link-color-visited:              $purple
+$nav-link-color-hover:                lighten($nav-link-color, 6%) !default
+$nav-link-color-alt:                  hsl(33, 100%, 51%)
+
+// Sidebar colors
+$sidebar-background-color:            $table-stripe-color
+$sidebar-border-color:                $table-border-color
+$sidebar-title-background-color:      $table-border-color
+
+// Sphinx highlight color
+$highlight-color:                     $yellow
