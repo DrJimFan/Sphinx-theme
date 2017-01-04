@@ -4892,6 +4892,9 @@ a:visited {
 a:hover {
   color: #9fcbed;
 }
+a:active {
+  color: #c6a0d5;
+}
 
 .wy-affix {
   position: fixed;
@@ -5082,7 +5085,7 @@ a:hover {
   color: #b3b3b3;
 }
 .wy-menu-vertical a:active {
-  background-color: #5091cd;
+  background-color: #8c1515;
   cursor: pointer;
   color: #fff;
 }
@@ -5114,7 +5117,7 @@ a:hover {
   margin: auto auto 0.809em auto;
   height: 45px;
   width: 45px;
-  background-color: #5091cd;
+  background-color: #8c1515;
   padding: 5px;
   border-radius: 100%;
 }
@@ -5244,7 +5247,7 @@ a:hover {
   margin-right: 12px;
   height: 45px;
   width: 45px;
-  background-color: #5091cd;
+  background-color: #8c1515;
   padding: 5px;
   border-radius: 100%;
 }

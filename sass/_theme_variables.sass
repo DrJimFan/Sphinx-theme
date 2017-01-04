@@ -19,6 +19,7 @@ $beige-10: #f2f1eb
 $beige-5: #fbfbf9
 $pantone-green: #175E54
 $pantone-green-light: #009B76
+$pantone-purple: #53284F
 $smooth-blue: #ddf1f7
 $cu-blue-light: #9fcbed  // #b9e0f7 #75aadb (slightly lighter)
 $cu-blue-dark: #5091cd
@@ -80,6 +81,7 @@ $link-color:                          $cu-blue-dark
 $link-color-visited:                  $purple
 $link-color-hover:                    $cu-blue-light
 $link-color-alt:                      hsl(33, 100%, 51%)
+$link-color-active:                   lighten($purple, 20%)
 
 // Buttons
 $button-background-color:             $pantone-green
@@ -91,7 +93,7 @@ $spinner-color:                       $link-color
 // Menu
 $menu-top-link-color:                 hsl(0, 0%, 95%)
 $menu-background-color:               $warm-gray
-$menu-logo-color:                     $link-color
+$menu-logo-color:                     $cardinal  // navigation bar "active" link background
 $nav-desktop-width:                   300px   // left side navigation bar width
 $nav-desktop-position:                left
 
@@ -114,7 +116,6 @@ $method-color:                        $gray
 $footer-color:                        $gray-light
 
 // Menu colors
-// $menu-vertical-background-color:      $section-background-color
 $menu-vertical-background-color:      $background-color
 
 // Menu text colors
@@ -135,7 +136,7 @@ $menu-link-active:                    $white
 $nav-background-color:                $menu-background-color
 $nav-search-background-color:         $cardinal
 $nav-search-color:                    $section-background-color
-$nav-link-color:                      $cardinal
+$nav-link-color:                      $nav-search-background-color
 $nav-link-color-visited:              $purple
 $nav-link-color-hover:                lighten($nav-link-color, 6%) !default
 $nav-link-color-alt:                  hsl(33, 100%, 51%)
