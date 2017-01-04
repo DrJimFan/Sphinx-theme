@@ -1,67 +1,66 @@
 Stanford theme for Sphinx 
 ==========================
 
-## Add new fonts
+## Additions
 
-- Edit `bower.json` 
+### Design
 
-ReadTheDoc theme
-==========================
+Online demo of the theme: [linxifan.github.io/Sphinx-demo/](https://linxifan.github.io/Sphinx-demo/)
 
-View a working [demo](http://docs.readthedocs.org) over on
-[readthedocs.org](http://www.readthedocs.org).
+Stanford web color specification: [[1]](https://identity.stanford.edu/overview/color.html) and [[2]](https://identity.stanford.edu/web-toolkit/color.html)
 
-This is a mobile-friendly [sphinx](http://www.sphinx-doc.org) theme I
-made for [readthedocs.org](http://www.readthedocs.org). It's currently
-in development there and includes some rtd variable checks that can be
-ignored if you're just trying to use it on your project outside of that
-site.
+### Add new fonts
 
-**This repo also exists as a submodule within the readthedocs itself**,
-so please make your edits to the SASS files here, rather than the .css
-files on RTD.
+1. Edit `bower.json`, add `ubuntumono-googlefont` to dependency list. 
+2. Edit `Gruntfile.js`, add font paths like the others. 
+3. Edit `sass/_theme_font_local.sass`, note that `font-weight: 400` corresponds to normal font while `700` correspoonds to bold. 
+4. Make sure the font files are copied to `stanford_theme/static/fonts/`
 
-Installation
-------------
+### SASS
+
+- `bower_components/wyrm` contains the SASS for the original WYRM core. You can override variables in it to use customized color. 
+- `sass/_theme_variables.sass` defines most of the colors.
+- `sass/_theme_rst.sass` defines how to render any reStructuredText file. All customizations are marked with `mydef` in the code comment. 
+- `sass/_theme_layout.css` defines how to render menu, navigation bars, etc.
+
+
+## Installation
 
 ### Via package
 
 Download the package or add it to your `requirements.txt` file:
 
 ```bash
-$ pip install sphinx_rtd_theme
+$ pip install stanford_theme
 ```
 
 In your `conf.py` file:
 
 ```python
-import sphinx_rtd_theme
-
-html_theme = "sphinx_rtd_theme"
-
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+import stanford_theme
+html_theme = "stanford_theme"
+html_theme_path = [stanford_theme.get_html_theme_path()]
 ```
 
 ### Via git or download
 
-Symlink or subtree the `sphinx_rtd_theme/sphinx_rtd_theme` repository
-into your documentation at `docs/_themes/sphinx_rtd_theme` then add the
+Symlink or subtree the `stanford_theme/stanford_theme ` repository
+into your documentation at `docs/_themes/stanford_theme` then add the
 following two settings to your Sphinx conf.py file:
 
-``` {.sourceCode .python}
-html_theme = "sphinx_rtd_theme"
+```python
+html_theme = "stanford_theme"
 html_theme_path = ["_themes", ]
 ```
 
-Configuration
--------------
+## Configuration
 
 You can configure different parts of the theme.
 
 ### Project-wide configuration
 
 The theme's project-wide options are defined in the
-`sphinx_rtd_theme/theme.conf` file of this repository, and can be
+`stanford_theme/theme.conf` file of this repository, and can be
 defined in your project's `conf.py` via `html_theme_options`. For
 example:
 
@@ -85,8 +84,7 @@ currently add the following:
 -   `:gitlab_url:` This will force the "Edit on GitLab" to the
     configured URL
 
-How the Table of Contents builds
---------------------------------
+### How the Table of Contents builds
 
 Currently the left menu will build based upon any `toctree(s)` defined
 in your index.rst file. It outputs 2 levels of depth, which should give
@@ -107,10 +105,29 @@ However if your toc is vertically too large, it will revert to static
 positioning. To disable the sticky nav altogether change the setting in
 `conf.py`.
 
-Contributing or modifying the theme
------------------------------------
+### Make the theme compatible with ReadTheDocs
 
-The sphinx\_rtd\_theme is primarily a [sass](http://www.sass-lang.com)
+Currently if you import stanford\_theme in your local sphinx build,
+then pass that same config to Read the Docs, it will fail, since RTD
+gets confused. If you want to run this theme locally and then also have
+it build on RTD, then you can add something like this to your config.
+Thanks to Daniel Oaks for this.
+
+```python
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+if not on_rtd:  # only import and set the theme if we're building docs locally
+    import stanford_theme
+    html_theme = 'stanford_theme'
+    html_theme_path = [stanford_theme.get_html_theme_path()]
+
+# otherwise, readthedocs.org uses their theme by default, so no need to specify it
+```
+
+## Editing the theme
+
+The theme is primarily a [sass](http://www.sass-lang.com)
 project that requires a few other sass libraries. I'm using
 [bower](http://www.bower.io) to manage these dependencies and
 [sass](http://www.sass-lang.com) to build the css. The good news is I
@@ -123,8 +140,7 @@ means installing node and ruby.
 
 ### Set up your environment
 
-1.  Install [sphinx](http://www.sphinx-doc.org) into a virtual
-    environment.
+1.  Install [sphinx](http://www.sphinx-doc.org) into a virtual environment.
 
 ```
 pip install sphinx
@@ -165,25 +181,3 @@ worth the trouble**.
     changes.
 4.  It'll rebuild the sphinx docs anytime it notices a change to .rst,
     .html, .js or .css files.
-
-
-Using this theme locally, then building on Read the Docs?
----------------------------------------------------------
-
-Currently if you import sphinx\_rtd\_theme in your local sphinx build,
-then pass that same config to Read the Docs, it will fail, since RTD
-gets confused. If you want to run this theme locally and then also have
-it build on RTD, then you can add something like this to your config.
-Thanks to Daniel Oaks for this.
-
-```python
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-# otherwise, readthedocs.org uses their theme by default, so no need to specify it
-```
