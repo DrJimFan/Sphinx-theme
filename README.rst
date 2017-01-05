@@ -1,5 +1,8 @@
-Stanford theme for Sphinx
-=========================
+Sphinx themes based on readthedocs.org
+======================================
+
+-  Stanford theme: ``stanford_theme``
+-  Updated RTD theme: ``neo_rtd_theme``
 
 Modification
 ------------

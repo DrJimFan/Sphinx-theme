@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-github.com/LinxiFan/Stanford-theme
+github.com/LinxiFan/Sphinx-theme
 """
 from setuptools import setup
 from sphinx_theme import __version__
