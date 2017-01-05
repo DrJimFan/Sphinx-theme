@@ -1,10 +1,10 @@
 include *.txt
 include LICENSE
-recursive-include stanford_theme *.conf
-recursive-include stanford_theme *.css
-recursive-include stanford_theme *.eot
-recursive-include stanford_theme *.html
-recursive-include stanford_theme *.js
-recursive-include stanford_theme *.svg
-recursive-include stanford_theme *.ttf
-recursive-include stanford_theme *.woff
+recursive-include sphinx_theme *.conf
+recursive-include sphinx_theme *.css
+recursive-include sphinx_theme *.eot
+recursive-include sphinx_theme *.html
+recursive-include sphinx_theme *.js
+recursive-include sphinx_theme *.svg
+recursive-include sphinx_theme *.ttf
+recursive-include sphinx_theme *.woff

@@ -3,27 +3,27 @@
 github.com/LinxiFan/Stanford-theme
 """
 from setuptools import setup
-from stanford_theme import __version__
+from sphinx_theme import __version__
 
 
 setup(
-    name='stanford_theme',
+    name='sphinx_theme',
     version=__version__,
-    url='https://github.com/LinxiFan/Stanford-theme/',
+    url='https://github.com/LinxiFan/Sphinx-theme/',
     license='MIT',
     author='Linxi (Jim) Fan',
     author_email='jimfan@cs.stanford.edu',
-    description='Stanford theme for Sphinx documentation generator and ReadTheDoc.org',
+    description='Sphinx documentation theme based on readthedocs.org',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['stanford_theme'],
-    package_data={'stanford_theme': [
-        'theme.conf',
-        '*.html',
-        'static/css/*.css',
-        'static/js/*.js',
-        'static/font/*.*'
-    ]},
+    packages=['sphinx_theme'],
+   #package_data={'sphinx_theme': [
+   #    'theme.conf',
+   #    '*.html',
+   #    'static/css/*.css',
+   #    'static/js/*.js',
+   #    'static/font/*.*'
+   #]},
     include_package_data=True,
     classifiers=[
         'Development Status :: 5 - Production/Stable',

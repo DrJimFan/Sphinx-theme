@@ -1,8 +1,8 @@
 {
-  "name": "stanford-theme",
+  "name": "sphinx-theme",
   "version": "1.0",
-  "homepage": "https://github.com/LinxiFan/Stanford-theme",
-  "description": "Stanford theme for Sphinx documentation generator and ReadTheDoc.org",
+  "homepage": "https://github.com/LinxiFan/Sphinx-theme",
+  "description": "Sphinx themes for code documentation based on readthedoc.org",
   "license": "MIT",
   "main": [
     "js/theme.js"

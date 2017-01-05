@@ -1,7 +1,7 @@
 Stanford theme for Sphinx 
 ==========================
 
-## Additions
+## Modification
 
 ### Design
 
@@ -14,7 +14,7 @@ Stanford web color specification: [[1]](https://identity.stanford.edu/overview/c
 1. Edit `bower.json`, add `ubuntumono-googlefont` to dependency list. 
 2. Edit `Gruntfile.js`, add font paths like the others. 
 3. Edit `sass/_theme_font_local.sass`, note that `font-weight: 400` corresponds to normal font while `700` correspoonds to bold. 
-4. Make sure the font files are copied to `stanford_theme/static/fonts/`
+4. Make sure the font files are copied to `sphinx_theme/<mytheme>/static/fonts/`
 
 ### SASS
 
@@ -23,6 +23,11 @@ Stanford web color specification: [[1]](https://identity.stanford.edu/overview/c
 - `sass/_theme_rst.sass` defines how to render any reStructuredText file. All customizations are marked with `mydef` in the code comment. 
 - `sass/_theme_layout.css` defines how to render menu, navigation bars, etc.
 
+### Workflow
+
+1. Work in `sass/` folder and Grunt will auto copy the generated files into `test_theme`
+2. Once done, copy `sass/` to `sass_<newtheme>` and copy `test_theme` to `sphinx_theme/<newtheme>` subdir. 
+3. Update `sphinx_theme/__init__.py` to include the new theme. 
 
 ## Installation
 
@@ -31,26 +36,30 @@ Stanford web color specification: [[1]](https://identity.stanford.edu/overview/c
 Download the package or add it to your `requirements.txt` file:
 
 ```bash
-$ pip install stanford_theme
+$ pip install sphinx_theme
 ```
 
 In your `conf.py` file:
 
 ```python
-import stanford_theme
+import sphinx_theme
 html_theme = "stanford_theme"
-html_theme_path = [stanford_theme.get_html_theme_path()]
+html_theme_path = [sphinx_theme.get_html_theme_path('stanford-theme')]
+
+# All available themes:
+print(sphinx_theme.THEME_LIST)
+# >> ['stanford_theme', 'neo_rtd_theme']
 ```
 
 ### Via git or download
 
-Symlink or subtree the `stanford_theme/stanford_theme ` repository
-into your documentation at `docs/_themes/stanford_theme` then add the
+Symlink or subtree the `sphinx_theme/sphinx_theme` repository
+into your documentation at `docs/_themes/sphinx_theme` then add the
 following two settings to your Sphinx conf.py file:
 
 ```python
 html_theme = "stanford_theme"
-html_theme_path = ["_themes", ]
+html_theme_path = ["_themes/sphinx_theme", ]
 ```
 
 ## Configuration
@@ -60,7 +69,7 @@ You can configure different parts of the theme.
 ### Project-wide configuration
 
 The theme's project-wide options are defined in the
-`stanford_theme/theme.conf` file of this repository, and can be
+`sphinx_theme/<mytheme>/theme.conf` file of this repository, and can be
 defined in your project's `conf.py` via `html_theme_options`. For
 example:
 
@@ -118,9 +127,9 @@ Thanks to Daniel Oaks for this.
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
-    import stanford_theme
+    import sphinx_theme
     html_theme = 'stanford_theme'
-    html_theme_path = [stanford_theme.get_html_theme_path()]
+    html_theme_path = [sphinx_theme.get_html_theme_path('stanford_theme')]
 
 # otherwise, readthedocs.org uses their theme by default, so no need to specify it
 ```
