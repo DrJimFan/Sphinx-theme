@@ -55,6 +55,19 @@
   div[class^='highlight'] pre
     font-size: $block-code-size 
 
+  // mydef: override 'danger' directive color
+  // wyrm/sass/wyrm_core/_alert.sass
+  .wy-alert.wy-alert-danger
+    background: lighten($purple, 40%)
+    .wy-alert-title
+      background: lighten(saturate($red, 40%), 5%)
+
+  // mydef: override 'warning' directive color
+  .wy-alert.wy-alert-warning
+    background: lighten($orange, 40%)
+    .wy-alert-title
+      background: lighten(saturate($orange, 20%), 10%)
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
     @extend .wy-alert
@@ -68,9 +81,9 @@
       margin-right: 4px
   .note, .seealso
     @extend .wy-alert.wy-alert-info
-  .hint, .tip, .important
+  .hint, .tip
     @extend .wy-alert.wy-alert-success
-  .error, .danger
+  .error, .danger, .important
     @extend .wy-alert.wy-alert-danger
   .warning, .caution, .attention, .admonition-todo
     @extend .wy-alert.wy-alert-warning
