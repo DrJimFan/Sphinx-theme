@@ -69,7 +69,8 @@
       background: lighten(saturate($orange, 20%), 10%)
 
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
+  // mydef: added .example and .references directive in the customized napolean2 extension
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .example, .references
     @extend .wy-alert
     .last
       margin-bottom: 0
@@ -79,9 +80,9 @@
     @extend .fa-exclamation-circle
     &:before
       margin-right: 4px
-  .note, .seealso
+  .note, .seealso, .references
     @extend .wy-alert.wy-alert-info
-  .hint, .tip
+  .hint, .tip, .example
     @extend .wy-alert.wy-alert-success
   .error, .danger, .important  // mydef: .important is now a danger directive
     @extend .wy-alert.wy-alert-danger

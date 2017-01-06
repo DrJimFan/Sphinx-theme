@@ -39,6 +39,25 @@ To modify existing theme:
 3. Run `./swap sass sass_neo_rtd` again to restore the files.
 4. Commit all changes.
 
+### Modify directives
+
+Directives like `.warning`, `.example`, can be added to `sphinxcontrib-napolean`. 
+
+Currently support:
+
+| Style                | Directives                                             |
+|------------------    |----------------------------------------------------    |
+| info (blue)          | `.note, .seealso, .references`                         |
+| tip (green)          | `.tip, .hint, .example`                                |
+| warning (orange)     | `.warning, .caution, .attention, .admonition-todo`     |
+| danger (red)         | `.danger, .error, .important`                          |
+
+- Refer to `sphinxcontrib-napolean2/directives.py` for how to add new directives. 
+- Add new parser methods to `sphinxcontrib-napolean2/docstring.py`. Refer to lines marked with 'ADDED'. 
+- Add `app.add_directive('example', ExampleDirective)` to `setup()` function in `sphinxcontrib-napolean2/__init__.py`
+- Modify `sass/_theme_rst.sass` to support the new directives in the theme. 
+- Original designs are located in `wyrm/sass/wyrm_core/_alert.sass`
+
 ## Installation
 
 ### Via package

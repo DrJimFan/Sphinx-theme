@@ -49,11 +49,44 @@ Workflow
    ``test_theme`` to ``sphinx_theme/<newtheme>`` subdir.
 3. Update ``sphinx_theme/__init__.py`` to include the new theme.
 
-To modify existing theme: 1. Run ``./swap sass sass_neo_rtd`` and work
-in ``sass/`` folder. Changes will be reflected in ``test_theme/`` 2. Run
-``./cptheme neo_rtd`` to copy ``test_theme/`` files into
-``sphinx_theme/neo_rtd_theme``. 3. Run ``./swap sass sass_neo_rtd``
-again to restore the files. 4. Commit all changes.
+To modify existing theme:
+
+1. Run ``./swap sass sass_neo_rtd`` and work in ``sass/`` folder.
+   Changes will be reflected in ``test_theme/``
+2. Run ``./cptheme neo_rtd`` to copy ``test_theme/`` files into
+   ``sphinx_theme/neo_rtd_theme``.
+3. Run ``./swap sass sass_neo_rtd`` again to restore the files.
+4. Commit all changes.
+
+Modify directives
+~~~~~~~~~~~~~~~~~
+
+Directives like ``.warning``, ``.example``, can be added to
+``sphinxcontrib-napolean``.
+
+Currently support:
+
++--------------------+--------------------------------------------------------+
+| Style              | Directives                                             |
++====================+========================================================+
+| info (blue)        | ``.note, .seealso, .references``                       |
++--------------------+--------------------------------------------------------+
+| tip (green)        | ``.tip, .hint, .example``                              |
++--------------------+--------------------------------------------------------+
+| warning (orange)   | ``.warning, .caution, .attention, .admonition-todo``   |
++--------------------+--------------------------------------------------------+
+| danger (red)       | ``.danger, .error, .important``                        |
++--------------------+--------------------------------------------------------+
+
+-  Refer to ``sphinxcontrib-napolean2/directives.py`` for how to add new
+   directives.
+-  Add new parser methods to ``sphinxcontrib-napolean2/docstring.py``.
+   Refer to lines marked with 'ADDED'.
+-  Add ``app.add_directive('example', ExampleDirective)`` to ``setup()``
+   function in ``sphinxcontrib-napolean2/__init__.py``
+-  Modify ``sass/_theme_rst.sass`` to support the new directives in the
+   theme.
+-  Original designs are located in ``wyrm/sass/wyrm_core/_alert.sass``
 
 Installation
 ------------
