@@ -32,6 +32,13 @@ Stanford web color specification: [[1]](https://identity.stanford.edu/overview/c
 2. Once done, copy `sass/` to `sass_<newtheme>` and copy `test_theme` to `sphinx_theme/<newtheme>` subdir. 
 3. Update `sphinx_theme/__init__.py` to include the new theme. 
 
+To modify existing theme:
+
+1. Run `./swap sass sass_neo_rtd` and work in `sass/` folder. Changes will be reflected in `test_theme/`
+2. Run `./cptheme neo_rtd` to copy `test_theme/` files into `sphinx_theme/neo_rtd_theme`.
+3. Run `./swap sass sass_neo_rtd` again to restore the files.
+4. Commit all changes.
+
 ## Installation
 
 ### Via package
