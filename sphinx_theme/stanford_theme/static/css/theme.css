@@ -5740,8 +5740,8 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
   display: inline-block;
   margin: 6px 0;
   line-height: normal;
-  background: #fbe7e7;
-  color: #e23e3e;
+  background: #fcebeb;
+  color: #820000;
   border-top: solid 3px #8c1515;
   padding: 6px;
   position: relative;
@@ -5760,7 +5760,7 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
   border: none;
   border-left: solid 3px #ec8181;
   font-size: 100%;
-  background: #fbe7e7;
+  background: #fcebeb;
   color: #555;
 }
 .rst-content dl:not(.docutils) dl dt .headerlink {
